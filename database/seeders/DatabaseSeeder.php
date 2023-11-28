@@ -3,7 +3,16 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\LogSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\UserSeeder;
+use Database\Seeders\BrandSeeder;
+use Database\Seeders\ImageSeeder;
+use Database\Seeders\CommentSeeder;
+use Database\Seeders\CountrySeeder;
+use Database\Seeders\VehicleSeeder;
+use Database\Seeders\ImporterSeeder;
+use Database\Seeders\VehicleTypeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +21,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(UserSeeder::class);
+        $this->call(BrandSeeder::class);
+        $this->call(CountrySeeder::class);
+        $this->call(ImporterSeeder::class);
+        $this->call(LogSeeder::class);
+        $this->call(VehicleTypeSeeder::class);
+        $this->call(VehicleSeeder::class);
+        $this->call(CommentSeeder::class);
+        $this->call(ImageSeeder::class);
     }
 }
