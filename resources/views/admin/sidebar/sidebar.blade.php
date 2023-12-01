@@ -2,10 +2,10 @@
     <!-- Brand demo (see assets/css/demo/demo.css) -->
     <div class="app-brand demo ">
         <span class=" demo ">
-            <img width="30" src="{{ asset('assetss/img/logocoutonou.jpg') }}" alt="Brand Logo" class="img-fluid">
-            {{-- {{ asset('assetss/img/logocotonou.jpg') }} --}}
+            <img width="30" src="{{ asset('assets/images/log1.jpg') }}" alt="Brand Logo" class="img-fluid">
+            {{-- {{ asset('assets/images/log1.jpg') }} --}}
         </span>
-        <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Sidoine</a>
+        <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2">AUTO CONNECT AFRICA</a>
         <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
             <i class="ion ion-md-menu align-middle"></i>
         </a>
