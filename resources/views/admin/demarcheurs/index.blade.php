@@ -11,7 +11,7 @@
       <div class="col-md-12">
         <div class="card mb-4">
           <h4 class="card-header text-white rounded p-3 text-center" style="background-color: rgb(26,47,68); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
-            Liste des utilisateurs
+            Liste des Démarcheurs
           </h4>
           <div class="card-body">
             <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
@@ -22,7 +22,7 @@
                   <th>Email</th>
                   <th>Téléphone</th>
                   <th>Adresse</th>
-                  <th class="text-center">Action</th>
+                  <th>Action</th>
 
                 </tr>
               </thead>

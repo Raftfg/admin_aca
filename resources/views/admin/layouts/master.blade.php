@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" class="material-style layout-fixed">
 <head>
-    <title>AUTO CONNECT AFRICA</title>
+    <title>ACA - Auto Connect Africa</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="participation citolyenne, MAirie de cotonou." />
-    <meta name="keywords" content="participation citolyenne, Benin, Mairie de coronou">
-    <meta name="AKPAGNONNIDE SIDOINE" content="participation citoyenne" />
-    <!-- survey-JS -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description"
+        content="ACA - Auto Connect Africa" />
+    <meta name="keywords"
+        content="ACA - Auto Connect Africa">
+    <meta name="AKPAGNONNIDE SIDOINE" content="ACA - Auto Connect Africa" />
+         <!-- survey-JS -->
     <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- Google fonts -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logos.png') }}">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- Icon fonts -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">
@@ -27,6 +32,15 @@
     <!-- Libs -->
     <link rel="stylesheet" href="{{ asset('assets/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/flot/flot.css') }}">
+    <style>
+  .error {
+    color: red;
+    border-color: red;
+    font-weight: 900;
+  }
+</style>
+
+
     @livewireStyles
 
     {{-- ----------------------datatable --}}
@@ -225,27 +239,16 @@
                             </div>
                             </a>
 
-                            <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                                <img src="{{ asset('assets/img/avatars/5-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
-                                <div class="media-body ml-3">
-                                    <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet
-                                        elit.</div>
-                                    <div class="text-light small mt-1">
-                                        Alice &nbsp;·&nbsp; 2h ago
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                                <img src="{{ asset('assets/img/avatars/11-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
-                                <div class="media-body ml-3">
-                                    <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet
-                                        consectetuer amet elit dolor sit.</div>
-                                    <div class="text-light small mt-1">
-                                        Suzen &nbsp;·&nbsp; 5h ago
-                                    </div>
-                                </div>
-                            </a>
+                <nav class="layout-footer footer bg-white">
+                    <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
+                        <div class="pt-3">
+                            <span class="footer-text font-weight-semibold">&copy; <a href="http://star-labs.bj/"
+                                    class="footer-link" target="_blank">All rights reserved - <?php $Year = date('Y'); ?> {{ $Year }}</a></span>
+                        </div>
+                        <div>
+                            {{-- <a href="javascript:" class="footer-link pt-3"></a> --}}
+=                            <a href="#" class="footer-link pt-3 ml-4">ACA - Auto Connect Africa</a>
+                            {{-- <a href="javascript:" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a> --}}
                         </div>
 
                         <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all
@@ -431,6 +434,8 @@
     </script>
     @livewireScripts
     @yield('script')
+
+    @yield('style')
 
 </body>
 

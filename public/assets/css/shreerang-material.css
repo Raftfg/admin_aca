@@ -9318,7 +9318,7 @@ a.bg-linux-darker:hover, a.bg-linux-darker:focus {
 }
 
 .sidenav.bg-dark {
-  background-color: #2c2e3e !important;
+  background-color: rgb(26,47,68) !important;
   color: #9b9ca3;
 }
 .sidenav.bg-dark .sidenav-link,
