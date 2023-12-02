@@ -1,28 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en" class="material-style layout-fixed">
-
 <head>
     <title>AUTO CONNECT AFRICA</title>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description"
-        content="participation citolyenne, MAirie de cotonou." />
-    <meta name="keywords"
-        content="participation citolyenne, Benin, Mairie de coronou">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="participation citolyenne, MAirie de cotonou." />
+    <meta name="keywords" content="participation citolyenne, Benin, Mairie de coronou">
     <meta name="AKPAGNONNIDE SIDOINE" content="participation citoyenne" />
-         <!-- survey-JS -->
+    <!-- survey-JS -->
     <meta name="csrf-token" content="{{csrf_token()}}">
-
-
     <!-- Google fonts -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
-
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-
     <!-- Icon fonts -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/ionicons.css') }}">
@@ -30,34 +20,28 @@
     <link rel="stylesheet" href="{{ asset('assets/fonts/open-iconic.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/pe-icon-7-stroke.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">
-
     <!-- Core stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-material.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/shreerang-material.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/uikit.css') }}">
-
     <!-- Libs -->
     <link rel="stylesheet" href="{{ asset('assets/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/flot/flot.css') }}">
-
     @livewireStyles
 
-{{-- ----------------------datatable --}}
-{{-- A  remettre --}}
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" />
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    {{-- ----------------------datatable --}}
+    {{-- A  remettre --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css" type="text/css" />
 
     {{-- <link rel="stylesheet" href="{{'assets/css/datatable/dataTables.bootstrap4.min.css'}}" />
     <link rel="stylesheet" href="{{'assets/css/datatable/jquery.dataTables.min.css'}}">
     <link rel="stylesheet" href="{{'assets/css/datatable/responsive.bootstrap4.min.css'}}" type="text/css" /> --}}
     @yield('style')
-{{-- ----------------------datatable --}}
-
-
+    {{-- ----------------------datatable --}}
 </head>
-
 <style>
     /* close icon */
     .close:focus,
@@ -67,14 +51,11 @@
         opacity: .75;
         outline: none !important;
     }
-
     .close {
         font-size: 45px !important;
         margin-top: 5px !important;
     }
-
 </style>
-
 <body>
     <!-- [ Preloader ] Start -->
     <div class="page-loader">
@@ -96,16 +77,13 @@
             <!-- [ Layout container ] Start -->
             <div class="layout-container">
                 <!-- [ Layout navbar ( Header ) ] Start -->
-                <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x"
-                    id="layout-navbar">
+                <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar">
 
                     <!-- Brand demo (see assets/css/demo/demo.css) -->
                     <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
                         <span class="app-brand-logo demo">
-                            <img src="{{ asset('assets/images/log1.jpg') }}" alt="Brand Logo"
-                           
-                                class="img-fluid" width="30">
-                        
+                            <img src="{{ asset('assets/images/log1.jpg') }}" alt="Brand Logo" class="img-fluid" width="30">
+
                         </span>
                         <span class="app-brand-text demo font-weight-normal ml-2">Sidoine</span>
                     </a>
@@ -117,8 +95,7 @@
                         </a>
                     </div>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#layout-navbar-collapse">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#layout-navbar-collapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -238,108 +215,103 @@
                                         <a href="javascript:"
                                             class="list-group-item list-group-item-action media d-flex align-items-center">
                                             <img src="{{ asset('assets/img/avatars/4-small.png') }}"
-                                                class="d-block ui-w-40 rounded-circle" alt>
-                                            <div class="media-body ml-3">
-                                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet,
-                                                    consectetuer.</div>
-                                                <div class="text-light small mt-1">
-                                                    Lary Doe &nbsp;·&nbsp; 1h ago
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <a href="javascript:"
-                                            class="list-group-item list-group-item-action media d-flex align-items-center">
-                                            <img src="{{ asset('assets/img/avatars/5-small.png') }}"
-                                                class="d-block ui-w-40 rounded-circle" alt>
-                                            <div class="media-body ml-3">
-                                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet
-                                                    elit.</div>
-                                                <div class="text-light small mt-1">
-                                                    Alice &nbsp;·&nbsp; 2h ago
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <a href="javascript:"
-                                            class="list-group-item list-group-item-action media d-flex align-items-center">
-                                            <img src="{{ asset('assets/img/avatars/11-small.png') }}"
-                                                class="d-block ui-w-40 rounded-circle" alt>
-                                            <div class="media-body ml-3">
-                                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet
-                                                    consectetuer amet elit dolor sit.</div>
-                                                <div class="text-light small mt-1">
-                                                    Suzen &nbsp;·&nbsp; 5h ago
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                    <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all
-                                        messages</a>
-                                </div>
-                            </div> --}}
-
-                            <!-- Divider -->
-                            <div
-                                class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">
-                                |</div>
-                            <div class="demo-navbar-user nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                                    <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
-                                        {{-- <img src="{{ asset('assets/images/log1.jpg') }}" alt
-                                            class="d-block ui-w-30 rounded-circle"> --}}
-                                            <i class="far fa-user-circle"></i>
-                                        <span class="px-1 mr-lg-2 ml-2 ml-lg-0">sidoine</span>
-                                    </span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="javascript:" class="dropdown-item" data-toggle="modal"
-                                        data-target="#ViewProfile">
-                                        {{-- <i class="feather icon-user text-muted"></i> &nbsp; My profile</a> --}}
-                                    {{-- <a href="javascript:" class="dropdown-item">
-                                        <i class="feather icon-mail text-muted"></i> &nbsp; Messages</a> --}}
-                                    {{-- <a href="javascript:" class="dropdown-item">
-                                        <i class="feather icon-settings text-muted"></i> &nbsp; Account settings</a> --}}
-                                    <div class="dropdown-divider"></div>
-                                    <a href="{{ route('logout') }}" class="dropdown-item">
-                                        <i class="feather icon-power text-danger"></i> &nbsp; Log Out</a>
+                            class="d-block ui-w-40 rounded-circle" alt>
+                            <div class="media-body ml-3">
+                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet,
+                                    consectetuer.</div>
+                                <div class="text-light small mt-1">
+                                    Lary Doe &nbsp;·&nbsp; 1h ago
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </nav>
-                <!-- [ Layout navbar ( Header ) ] End -->
-                {{-- content layout --}}
-                
-                @yield('content')
+                            </a>
 
-                <nav class="layout-footer footer bg-white">
-                    <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
-                        <div class="pt-3">
-                            <span class="footer-text font-weight-semibold">&copy; <a href="http://star-labs.bj/"
-                                    class="footer-link" target="_blank">App Car </a></span>
+                            <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
+                                <img src="{{ asset('assets/img/avatars/5-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
+                                <div class="media-body ml-3">
+                                    <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet
+                                        elit.</div>
+                                    <div class="text-light small mt-1">
+                                        Alice &nbsp;·&nbsp; 2h ago
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
+                                <img src="{{ asset('assets/img/avatars/11-small.png') }}" class="d-block ui-w-40 rounded-circle" alt>
+                                <div class="media-body ml-3">
+                                    <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet
+                                        consectetuer amet elit dolor sit.</div>
+                                    <div class="text-light small mt-1">
+                                        Suzen &nbsp;·&nbsp; 5h ago
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div>
-                            {{-- <a href="javascript:" class="footer-link pt-3"></a> --}}
-                            <a href="#" class="footer-link pt-3 ml-4"><?php $Year = date('Y'); ?> {{ $Year }}</a>
-                            <a href="#" class="footer-link pt-3 ml-4">Contact</a>
-                            {{-- <a href="javascript:" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a> --}}
-                        </div>
+
+                        <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all
+                            messages</a>
                     </div>
-                </nav>
+            </div> --}}
+
+            <!-- Divider -->
+            <div class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">
+                |</div>
+            <div class="demo-navbar-user nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    @if(auth()->guard('web')->check())
+                    <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                        <i class="far fa-user-circle"></i>
+                        <span class="px-1 mr-lg-2 ml-2 ml-lg-0">
+                            {{ auth()->guard('web')->user()->lastname }} {{ auth()->guard('web')->user()->firstname }}
+                        </span>
+                    </span>
+                    @endif
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="dropdown-item">
+                            <i class="feather icon-power text-danger"></i> &nbsp; Déconnexion
+                        </button>
+                    </form>
+                    @endauth
+                </div>
+
             </div>
-            <!-- [ Layout container ] End -->
         </div>
-        <!-- Overlay -->
-        <div class="layout-overlay layout-sidenav-toggle"></div>
+    </div>
+    </nav>
+    <!-- [ Layout navbar ( Header ) ] End -->
+    {{-- content layout --}}
+
+    @yield('content')
+
+    <nav class="layout-footer footer bg-white">
+        <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
+            <div class="pt-3">
+                <span class="footer-text font-weight-semibold">&copy; <a href="http://star-labs.bj/" class="footer-link" target="_blank">App Car </a></span>
+            </div>
+            <div>
+                {{-- <a href="javascript:" class="footer-link pt-3"></a> --}}
+                <a href="#" class="footer-link pt-3 ml-4"><?php $Year = date('Y'); ?> {{ $Year }}</a>
+                <a href="#" class="footer-link pt-3 ml-4">Contact</a>
+                {{-- <a href="javascript:" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a> --}}
+            </div>
+        </div>
+    </nav>
+    </div>
+    <!-- [ Layout container ] End -->
+    </div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-sidenav-toggle"></div>
     </div>
     <!-- [ Layout wrapper] End -->
 
     {{-- model profile user --}}
 
     <!-- Modal User-->
-    <div  style =" z-index: 1;" class="modal fade" id="ViewProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div style=" z-index: 1;" class="modal fade" id="ViewProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -353,36 +325,31 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Full Name</label>
                             <div class="col-sm-9">
-                                <input type="text" id="v_name" name="name" class="form-control"
-                                    value="Sidoine" readonly />
+                                <input type="text" id="v_name" name="name" class="form-control" value="Sidoine" readonly />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email Address</label>
                             <div class="col-sm-9">
-                                <input type="text" id="v_email" name="email" class="form-control"
-                                    value="sido@gmail.com" readonly />
+                                <input type="text" id="v_email" name="email" class="form-control" value="sido@gmail.com" readonly />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Phone Number</label>
                             <div class="col-sm-9">
-                                <input type="tel" id="v_phone_number" name="mobile" class="form-control"
-                                    value="67778899" readonly />
+                                <input type="tel" id="v_phone_number" name="mobile" class="form-control" value="67778899" readonly />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Group ID</label>
                             <div class="col-sm-9">
-                                <input type="text" id="v_groupid" name="groupid" class="form-control"
-                                    value="Sido" readonly />
+                                <input type="text" id="v_groupid" name="groupid" class="form-control" value="Sido" readonly />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Role Name</label>
                             <div class="col-sm-9">
-                                <input type="text" id="v_role_name" name="role_name" class="form-control"
-                                    value="Admin" readonly />
+                                <input type="text" id="v_role_name" name="role_name" class="form-control" value="Admin" readonly />
                             </div>
                         </div>
                     </div>
@@ -390,8 +357,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                                class="icofont icofont-eye-alt"></i>Close</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="icofont icofont-eye-alt"></i>Close</button>
                     </div>
                 </div>
             </div>
@@ -403,28 +369,28 @@
 
 
 
-    
-{{----------------------------------------------- datatable --}}
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    {{----------------------------------------------- datatable --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js|https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
     {{-- <script src="{{ asset('assets/js/jquery-3.5.1.js') }}"></script> --}}
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
-  <script src="  https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script src="  https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 
-  <script src=" https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-  
+    <script src=" https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 
-    {{-- <script src="{{asset('assets/js/jquery-3.5.1.js') }}"></script> 
 
-<script src="{{'assets/js/datatable/jquery.dataTables.min.js'}}"></script>
-    
-  <script src="{{'assets/js/datatable/dataTables.bootstrap4.min.js'}}"></script>
+    {{-- <script src="{{asset('assets/js/jquery-3.5.1.js') }}"></script>
 
-  <script src="{{'assets/js/datatable/dataTables.responsive.min.js'}}"></script> --}}
+    <script src="{{'assets/js/datatable/jquery.dataTables.min.js'}}"></script>
 
-  {{-- <script src="  https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script> --}}
-{{----------------------------------------------- datatable --}}
+    <script src="{{'assets/js/datatable/dataTables.bootstrap4.min.js'}}"></script>
+
+    <script src="{{'assets/js/datatable/dataTables.responsive.min.js'}}"></script> --}}
+
+    {{-- <script src="  https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script> --}}
+    {{----------------------------------------------- datatable --}}
 
     <!-- Core scripts -->
     <script src="{{ asset('assets/js/pace.js') }}"></script>
@@ -451,9 +417,12 @@
     {{-- hide message js --}}
     <script type="text/javascript">
         $(document).ready(function() {
-            var table = $('#example').DataTable({  "scrollX": true,  "order": []});
+            var table = $('#example').DataTable({
+                "scrollX": true,
+                "order": []
+            });
             //var table = $('#example').DataTable({  responsive: true, "order": [] });
-          
+
             // Event listener to the two range filtering inputs to redraw on input
             $('#min, #max').keyup(function() {
                 table.draw();

@@ -27,29 +27,15 @@
                 font-weight: bold;
                 margin-left: 9px;"><span style="color:black;">AUTO</span> CONNECT AFRICA</span>
               </div>
-              <marquee  behavior="scroll" direction="right" width="100%" >
+              <marquee behavior="scroll" direction="right" width="100%">
                 <p class="" style="
                 color: black;
                 font-weight: bold;
-                margin-left: 9px; text-transform: uppercase;">Connectez-vous à Auto Connect Africa</p>
+                margin-left: 9px; text-transform: uppercase;">Vérifier mon adresse mail</p>
               </marquee>
-              <form method="POST" action="{{ route('login') }}">
+              <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
-                <div class="form-group">
-                  <label for="email" class="sr-only">Email</label>
-                  <input type="email" name="email" id="email" class="form-control" placeholder="autoconnectafrica@gmail.com">
-                  @error('email')
-                  <span class="text-danger ">{{ $message }}</span>
-                  @enderror
-                </div>
-                <div class="form-group mb-4">
-                  <label for="password" class="sr-only">Password</label>
-                  <input type="password" name="password" id="password" class="form-control" placeholder="***********">
-                  @error('password')
-                  <span class="text-danger ">{{ $message }}</span>
-                  @enderror
-                </div>
-                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Se connecter">
+                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Renvoyer le mail">
               </form>
               <a href="{{ route('password.request') }}" class="forgot-password-link">Mot de passe oublié?</a>
               <nav class="login-card-footer-nav">
