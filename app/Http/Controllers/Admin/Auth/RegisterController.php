@@ -10,19 +10,13 @@ use Illuminate\Support\Facades\Hash ;
 
 class RegisterController extends Controller
 {
-    public function __construct()
-    {
-        
-        //$this->middleware('users');
-        //$this->middleware('admin');
 
+    public function index()
+    {
+        $users = User::latest()->get();
+        return view('admin.users.index',compact('users'));
     }
 
-    // public function register()
-    // {
-
-    //     return view('admin.auth.register');
-    // }
 
     public function registerAdmin()
     {
@@ -37,9 +31,10 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'prename' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'tel' => 'required|numeric|digits:8|unique:users',
+            'phone' => 'required|numeric|digits:8|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'password_confirmation' => 'required',
+            'address' => 'required',
         ]);
         
         User::create([
@@ -140,8 +135,6 @@ class RegisterController extends Controller
              # code...
              return redirect()->back()->with('error', 'L\'utilisateur existe dejà  existe déjà.');
          }
-
-
 
     }
 
