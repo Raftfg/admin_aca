@@ -20,7 +20,7 @@
 
         <!-- Dashboards -->
         <li class="sidenav-item active">
-            <a href="#" class="sidenav-link">
+            <a href="{{route('admin')}}" class="sidenav-link">
                 <i class="sidenav-icon feather icon-home"></i>
                 <div>Dashboards</div>
                 {{-- @if (Auth::check() == 'Admin')
@@ -45,7 +45,7 @@
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
             <i class="sidenav-icon feather icon-user"></i>
-                <div>Utilisateur</div>
+                <div>Utilisateurs</div>
             </a>
             <ul class="sidenav-menu">
                 <li>
@@ -59,7 +59,7 @@
                 </li>
 
                 <li>
-                    <a href="{{route('admin/users')}}"class="sidenav-link  ">
+                    <a href="{{route('admin/users')}}" class="sidenav-link  ">
                         {{-- <i class="sidenav-icon feather icon-cloud-lightning"></i> --}}
                         <i class="sidenav-icon feather icon-list"></i>
 
@@ -73,7 +73,7 @@
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon  ion ion-md-car align-middle"></i>
-                <div>Véhicule</div>
+                <div>Véhicules</div>
             </a>
             <ul class="sidenav-menu">
                 <li>
@@ -85,10 +85,62 @@
                         <div>Véhicule</div>
                     </a>
                 </li>
-
                 <li>
                     <!-- route n'existe pas sans le name du web.php-->
                     <a href="{{route('admin/vehicules')}}" class="sidenav-link  ">
+                        <i class="sidenav-icon feather icon-list"></i>
+                        <div>Liste</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon  ion ion-md-cog align-middle"></i>
+                <div>Marques de véhicule</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li>
+                    <!-- route n'existe pas sans le name du web.php-->
+                    <a href="{{route('admin/marque')}}" class="sidenav-link ">
+
+                        <i class="sidenav-icon ion ion-md-cog align-middle"></i>
+
+                        <div>Marque</div>
+                    </a>
+                </li>
+                <li>
+                    <!-- route n'existe pas sans le name du web.php-->
+                    <a href="{{route('admin/marques')}}" class="sidenav-link  ">
+                        <i class="sidenav-icon feather icon-list"></i>
+                        <div>Liste</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon  ion ion-md-barcode align-middle"></i>
+                <div>Types de véhicule</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li>
+                    <!-- route n'existe pas sans le name du web.php-->
+                    <a href="{{route('admin/type-vehicule')}}" class="sidenav-link ">
+
+                        <i class="sidenav-icon ion ion-md-barcode align-middle"></i>
+
+                        <div>Type</div>
+                    </a>
+                </li>
+                <li>
+                    <!-- route n'existe pas sans le name du web.php-->
+                    <a href="{{route('admin/types-vehicule')}}" class="sidenav-link  ">
                         <i class="sidenav-icon feather icon-list"></i>
                         <div>Liste</div>
                     </a>
@@ -108,14 +160,14 @@
         <li class="sidenav-item ">
             <a href="{{route('admin/clients')}}" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-people"></i>
-                <div>Client</div>
+                <div>Clients</div>
             </a>
         </li>
 
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon ion ion-ios-people"></i>
-                <div>Importateur</div>
+                <div>Importateurs</div>
             </a>
             <ul class="sidenav-menu">
                 <li>

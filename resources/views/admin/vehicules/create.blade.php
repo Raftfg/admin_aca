@@ -104,8 +104,12 @@
 
                   <div class="form-group col-md-4">
                     <label class="col-form-label">Marque</label>
-                    <input type="text" class="form-control" id="marque" name="marque" placeholder="Entrer une marque" required>
+                    <select class="form-control" name="marque" id="marque" required>
+                      <option value="">Sélectionner</option>
+                      <option value="1">Range Over</option>
+                    </select>
                   </div>
+
 
                   <div class="form-group col-md-4">
                     <label class="col-form-label">Image de couverture</label>

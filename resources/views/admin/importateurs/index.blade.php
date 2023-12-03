@@ -16,6 +16,10 @@
                             Liste des importateurs
                         </h4>
 
+                        <div class=" mt-2 ml-4">
+                            <a  class="btn btn-success" href="{{route('admin/importer')}}"  style="background-color: rgb(26,47,68) !important;" > Ajouter </a>
+                          </div>
+
                         <div class="card-body">
                             <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
                                 <thead>

@@ -14,9 +14,9 @@ use Laravel\Fortify\Fortify;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // ------------------------------admin register---------------------------------------
@@ -36,6 +36,21 @@ Route::get('admin/vehicules', [App\Http\Controllers\Admin\Vehicules\VehiculesCon
 Route::post('admin/vehicule', [App\Http\Controllers\Admin\Vehicules\VehiculesController::class, 'store'])->name('admin/vehicule');
 
 // ------------------------------admin register---------------------------------------
+
+// ------------------------------Marques ---------------------------------------
+Route::get('admin/marque', [App\Http\Controllers\Admin\Marques\MarqueController::class, 'create'])->name('admin/marque');
+Route::get('admin/marques', [App\Http\Controllers\Admin\Marques\MarqueController::class, 'index'])->name('admin/marques');
+Route::post('admin/marque', [App\Http\Controllers\Admin\Marques\MarqueController::class, 'store'])->name('admin/marque');
+
+// ------------------------------Marques---------------------------------------
+
+// ------------------------------Marques ---------------------------------------
+Route::get('admin/type-vehicule', [App\Http\Controllers\Admin\TypesVehicule\TypesVehiculeController::class, 'create'])->name('admin/type-vehicule');
+Route::get('admin/types-vehicule', [App\Http\Controllers\Admin\TypesVehicule\TypesVehiculeController::class, 'index'])->name('admin/types-vehicule');
+Route::post('admin/type-vehicule', [App\Http\Controllers\Admin\TypesVehicule\TypesVehiculeController::class, 'store'])->name('admin/type-vehicule');
+
+// ------------------------------Marques---------------------------------------
+
 
 
 // ------------------------------Demarcheur ---------------------------------------
@@ -57,6 +72,9 @@ Route::post('admin/importer', [App\Http\Controllers\Admin\Importateurs\Importate
 
 // ------------------------------Importateurs---------------------------------------
 
+// ------------------------------Dashboard ---------------------------------------
+Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
+// ------------------------------Dashboard---------------------------------------
 
 
 // Fortify::loginView(function () {
