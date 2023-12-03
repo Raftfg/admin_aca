@@ -23,87 +23,87 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
 
-    public function login()
-    {
+    // public function login()
+    // {
 
-        return view('auth.login');
-    }
+    //     return view('auth.login');
+    // }
 
-    public function authenticate(Request $request)
-    {
-        $request->validate([
-           // 'email' => 'required|string|email',
-            //'password' => 'required|string',
-        ]);
+    // public function authenticate(Request $request)
+    // {
+    //     $request->validate([
+    //        // 'email' => 'required|string|email',
+    //         //'password' => 'required|string',
+    //     ]);
 
-        $email    = $request->email;
-        $password = $request->password;
-        //$id = Auth::user()->id;
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+    //     $email    = $request->email;
+    //     $password = $request->password;
+    //     //$id = Auth::user()->id;
+    //     if (Auth::attempt(['email' => $email, 'password' => $password])) {
 
-            switch (Auth::user()->role_name) {
+    //         switch (Auth::user()->role_name) {
 
-                case 'admin':
+    //             case 'admin':
 
-                    $id = Auth::user()->id;
-                    DB::update('update users set status = ? where id = ?',[1, $id]);
-                      return redirect()->route('admin/home');
+    //                 $id = Auth::user()->id;
+    //                 DB::update('update users set status = ? where id = ?',[1, $id]);
+    //                   return redirect()->route('admin/home');
 
-                    break;
+    //                 break;
 
-                case 'users':
-                    //dd(session_status ());
-                  //  Auth::user()->status = session()->put('status', 'active');
+    //             case 'users':
+    //                 //dd(session_status ());
+    //               //  Auth::user()->status = session()->put('status', 'active');
                  
-                  //dd($id);
-                  //User::updateOrCreate(['id' => $id], ['status' => '1' ]);
-                 // User::find($id)->update(['status' => 1]);
+    //               //dd($id);
+    //               //User::updateOrCreate(['id' => $id], ['status' => '1' ]);
+    //              // User::find($id)->update(['status' => 1]);
                   
-                 $id = Auth::user()->id;
-                  DB::update('update users set status = ? where id = ?',[1, $id]);
-                    return redirect()->route('home');
+    //              $id = Auth::user()->id;
+    //               DB::update('update users set status = ? where id = ?',[1, $id]);
+    //                 return redirect()->route('home');
                    
 
-                   // {{ redirect()->back()->getTargetUrl() }}
+    //                // {{ redirect()->back()->getTargetUrl() }}
 
-                    break;
-                default:
-                return redirect()->route('home');
-            }
+    //                 break;
+    //             default:
+    //             return redirect()->route('home');
+    //         }
 
-           ;
+    //        ;
 
-            //return redirect()->intended('admin/home');
-        } else {
-            return redirect('login')->with('error', 'Oups! votre Email ou mot de passe est incorrecte');
-        }
-    }
+    //         //return redirect()->intended('admin/home');
+    //     } else {
+    //         return redirect('login')->with('error', 'Oups! votre Email ou mot de passe est incorrecte');
+    //     }
+    // }
 
-    public function logout()
-    {
+    // public function logout()
+    // {
     
-        $id = Auth::user()->id;
-        DB::update('update users set status = ? where id = ?',[0, $id]);
-        Auth::logout();
-        return redirect()->route('home');
-    }
+    //     $id = Auth::user()->id;
+    //     DB::update('update users set status = ? where id = ?',[0, $id]);
+    //     Auth::logout();
+    //     return redirect()->route('home');
+    // }
 }

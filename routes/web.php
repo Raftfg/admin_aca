@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Auth\RegisterController;
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +19,27 @@ use Laravel\Fortify\Fortify;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/', function () {
+    return view('auth.login');
+});
+
+// routes/web.php
+Route::middleware(['auth'])->group(function () {
+    Route::get('admin/register', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'registerAdmin'])->name('admin/register');
+    Route::post('admin/register', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'storeAdmin'])->name('admin/register');
+    Route::get('admin/user/update/{id}', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'update']);
+    Route::post('admin/user/edit', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'edit'])->name('admin/user/edit'); //Enregistrer departement
+
+    Route::get('admin/user/delete/{id}', [RegisterController::class, 'delete']);
+
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
+});
 
 
 // ------------------------------admin register---------------------------------------
-Route::get('admin/register', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'registerAdmin'])->name('admin/register');
+// Route::get('admin/register', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'registerAdmin'])->name('admin/register');
 Route::get('admin/users', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'index'])->name('admin/users');
 Route::post('admin/register', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'storeAdmin'])->name('admin/register');
 Route::get('admin/user/update/{id}', [App\Http\Controllers\Admin\Auth\RegisterController::class, 'update']);
@@ -75,6 +94,9 @@ Route::post('admin/importer', [App\Http\Controllers\Admin\Importateurs\Importate
 // ------------------------------Dashboard ---------------------------------------
 Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin');
 // ------------------------------Dashboard---------------------------------------
+
+
+
 
 
 // Fortify::loginView(function () {
