@@ -1,21 +1,15 @@
 @extends('admin/layouts.master')
-
 @section('content')
-
-
 <!-- [ Layout content ] Start -->
 <div class="layout-content">
   <!-- [ content ] Start -->
   <div class="container-fluid flex-grow-1 container-p-y">
-
     <div class="row">
       <div class="col-sm-12">
         <div class="card ">
-
           <h4 class="card-header text-white rounded p-3 text-center" style="background-color: rgb(26,47,68); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
-            Ajouter un Importateurs
+            Ajouter un importateur
           </h4>
-
           <div class="card-body">
             <div class="form-group row">
               <div class="col-sm-12">
@@ -39,26 +33,21 @@
               {{ csrf_field() }}
 
               <div class="col-md-12">
-
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label class="col-form-label">Nom de l'entreprise</label>
                     <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Entrer le nom de l'entreprise" required>
                   </div>
-
                   <div class="form-group col-md-6">
                     <label class="col-form-label">N° RCCM</label>
                     <input type="text" class="form-control" id="rccm" name="rccm" placeholder="Numéro du régistre de commerce" required>
                   </div>
-
                 </div>
                 <div class="row">
-
                   <div class="form-group col-md-6">
                     <label class="col-form-label">N° Carte d'identité / N° CIP</label>
                     <input type="text" class="form-control" id="cip" name="cip" placeholder="Numéro de la carte d'identité ou N° CIP " required>
                   </div>
-
                   <div class="form-group col-md-6">
                     <label class="col-form-label">Photo de la carte d'dentité</label>
                     <div class="custom-file">
@@ -68,21 +57,16 @@
                       </label>
                     </div>
                   </div>
-
                 </div>
-
                 <div class="row">
-
                   <div class="form-group col-md-6">
                     <label class="col-form-label">N° IFU</label>
                     <input type="text" class="form-control" id="ifu" name="ifu" placeholder="Entrer un numéro IFU" required>
                   </div>
-
                   <div class="form-group col-md-6">
                     <label class="col-form-label">Status</label>
                     <input type="text" class="form-control" id="status" name="status" placeholder="Entrer un status" required>
                   </div>
-
                 </div>
 
                 <div class="row">

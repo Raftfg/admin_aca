@@ -13,6 +13,11 @@
           <h4 class="card-header text-white rounded p-3 text-center" style="background-color: rgb(26,47,68); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
             Liste des utilisateurs
           </h4>
+          
+          <div class=" mt-2 ml-4">
+            <a  class="btn btn-success" href="{{route('admin/register')}}"  style="background-color: rgb(26,47,68) !important;" > Ajouter </a>
+          </div>
+
           <div class="card-body">
             <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
               <thead>
