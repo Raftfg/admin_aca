@@ -4,13 +4,16 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+// use Laravel\Fortify\TwoFactorAuthenticationCode;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasRoles, HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -23,6 +26,11 @@ class User extends Authenticatable implements MustVerifyEmail
     //     'password',
     // ];
     protected $guarded = [];
+
+    // public function sendTwoFactorAuthenticationCode()
+    // {
+    //     $this->notify(new TwoFactorAuthenticationCode());
+    // }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -42,4 +50,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+ 
 }

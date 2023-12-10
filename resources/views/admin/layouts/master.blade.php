@@ -3,14 +3,14 @@
 <html lang="en" class="material-style layout-fixed">
 
 <head>
-    <title>ACA - Auto Connect Africa</title>
+    <title>AAC - Africa Auto Connect </title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="ACA - Auto Connect Africa" />
-    <meta name="keywords" content="ACA - Auto Connect Africa">
-    <meta name="AKPAGNONNIDE SIDOINE" content="ACA - Auto Connect Africa" />
+    <meta name="description" content="AAC - Africa Auto Connect " />
+    <meta name="keywords" content="AAC - Africa Auto Connect">
+    <meta name="AAC ClUB" content="AAC - Africa Auto Connect" />
     <!-- survey-JS -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -18,6 +18,9 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logos.png') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
     <!-- Icon fonts -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">
@@ -44,7 +47,7 @@
     </style>
 
 
-    @livewireStyles
+    {{-- @livewireStyles --}}
 
 {{-- ----------------------datatable --}}
 {{-- A  remettre --}}
@@ -170,7 +173,7 @@
                         </div>
                         <div>
                             {{-- <a href="javascript:" class="footer-link pt-3"></a> --}}
-                            = <a href="#" class="footer-link pt-3 ml-4">ACA - Auto Connect Africa</a>
+                             <a href="#" class="footer-link pt-3 ml-4">AAC - Africa Auto Connect </a>
                             {{-- <a href="javascript:" class="footer-link pt-3 ml-4">Terms &amp; Conditions</a> --}}
                         </div>
                     </div>
@@ -315,7 +318,16 @@
     @yield('script')
 
     @yield('style')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+    <script>
+        // Display any success or error messages using Toastr
+        @if(session('success'))
+            toastr.success("{{ session('success') }}");
+        @elseif(session('error'))
+            toastr.error("{{ session('error') }}");
+        @endif
+    </script>
 </body>
 
 </html>

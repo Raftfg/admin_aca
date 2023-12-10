@@ -13,11 +13,11 @@
 
                         <h4 class="card-header text-white rounded p-3 text-center"
                             style="background-color: rgb(26,47,68); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
-                            Liste des types de véhicule
+                            Liste des models
                         </h4>
 
                         <div class=" mt-2 ml-4">
-            <a  class="btn btn-success" href="{{route('admin/type-vehicule')}}"  style="background-color: rgb(26,47,68) !important;" > Ajouter </a>
+            <a  class="btn btn-success" href="{{route('admin/modeels')}}"  style="background-color: rgb(26,47,68) !important;" > Ajouter </a>
           </div>
 
                         <div class="card-body">
@@ -26,7 +26,7 @@
                                     <tr>
 
 
-                                        <th>Type de véhicule</th>
+                                        <th>Model</th>
                                         <th>Description</th>
 
                                         <th class="text-center">Action</th>
@@ -34,7 +34,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($typesVehicule as $item)
+                                    @foreach ($Modeel as $item)
                                         <tr>
                                             
                                             <td>{{ $item->type }}</td>

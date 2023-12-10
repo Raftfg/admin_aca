@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('importer_id');
-            $table->unsignedBigInteger('vehicle_type_id');
-            $table->string('model');
+            $table->unsignedBigInteger('model_id');
+            // $table->string('model');
             $table->integer('manufacturing_year');
             $table->string('chassis_number');
-            $table->string('country_origin');
+            // $table->string('country_origin');
             $table->string('document_cert');
             $table->decimal('price', 10, 2);
             $table->string('condition');
@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('color')->nullable();
             $table->string('status');
+            $table->unsignedBigInteger('countrie_id');
             $table->unsignedBigInteger('brand_id');
             $table->string('image_cover')->nullable();
             $table->string('transmission')->nullable();
@@ -35,8 +36,9 @@ return new class extends Migration
 
             // Foreign key constraints
             $table->foreign('importer_id')->references('id')->on('importers')->onDelete('cascade');
-            $table->foreign('vehicle_type_id')->references('id')->on('vehicle_types');
+            $table->foreign('model_id')->references('id')->on('modeels');
             $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('countrie_id')->references('id')->on('countries');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

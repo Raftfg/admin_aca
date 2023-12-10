@@ -1,10 +1,14 @@
 <?php
 
-use Laravel\Fortify\Fortify;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\Auth\UserController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
+use App\Http\Controllers\Admin\Modeel\ModeelController;
+use App\Http\Controllers\Admin\Marques\MarqueController;
+use App\Http\Controllers\Admin\Vehicules\VehiculesController;
+use App\Http\Controllers\Admin\Importateurs\ImportateurController;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 
 /*
@@ -32,7 +36,7 @@ Route::get('/', function () {
     }
 });
 // routes/web.php
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('admin/register', [RegisterController::class, 'registerAdmin'])->name('admin/register');
     Route::post('admin/register', [RegisterController::class, 'storeAdmin'])->name('admin/register');
 
@@ -42,31 +46,35 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/user/delete/{id}', [RegisterController::class, 'delete']);
 
     // ------------------------------Vehicule ---------------------------------------
-    Route::get('admin/vehicule', [App\Http\Controllers\Admin\Vehicules\VehiculesController::class, 'create'])->name('admin/vehicule');
-    Route::get('admin/vehicules', [App\Http\Controllers\Admin\Vehicules\VehiculesController::class, 'index'])->name('admin/vehicules');
-    Route::post('admin/vehicule', [App\Http\Controllers\Admin\Vehicules\VehiculesController::class, 'store'])->name('admin/vehicule');
+    Route::get('admin/vehicule', [VehiculesController::class, 'create'])->name('admin/vehicule');
+    Route::get('admin/vehicules', [VehiculesController::class, 'index'])->name('admin/vehicules');
+    Route::post('admin/vehicule', [VehiculesController::class, 'store'])->name('admin/vehicule');
 
     // ------------------------------Marques ---------------------------------------
-    Route::get('admin/marque', [App\Http\Controllers\Admin\Marques\MarqueController::class, 'create'])->name('admin/marque');
-    Route::get('admin/marques', [App\Http\Controllers\Admin\Marques\MarqueController::class, 'index'])->name('admin/marques');
-    Route::post('admin/marque', [App\Http\Controllers\Admin\Marques\MarqueController::class, 'store'])->name('admin/marque');
+    Route::get('admin/marque', [MarqueController::class, 'create'])->name('admin/marque');
+    Route::get('admin/marques', [MarqueController::class, 'index'])->name('admin/marques');
+    Route::post('admin/marque', [MarqueController::class, 'store'])->name('admin/marque');
 
     // ------------------------------Type de véhicles ---------------------------------------
-    Route::get('admin/type-vehicule', [App\Http\Controllers\Admin\TypesVehicule\TypesVehiculeController::class, 'create'])->name('admin/type-vehicule');
-    Route::get('admin/types-vehicule', [App\Http\Controllers\Admin\TypesVehicule\TypesVehiculeController::class, 'index'])->name('admin/types-vehicule');
-    Route::post('admin/type-vehicule', [App\Http\Controllers\Admin\TypesVehicule\TypesVehiculeController::class, 'store'])->name('admin/type-vehicule');
+    Route::get('admin/modeel', [ModeelController::class, 'create'])->name('admin/modeel');
+    Route::get('admin/modeels', [ModeelController::class, 'index'])->name('admin/modeels');
+    Route::post('admin/modeel', [ModeelController::class, 'store'])->name('admin/modeel');
+    // Route::post('admin/modeel', [App\Http\Controllers\Admin\Modeel\ModeelController::class, 'store'])->name('admin/modeel');
 
     // ------------------------------Demarcheur ---------------------------------------
-    Route::get('admin/demarcheurs', [App\Http\Controllers\Admin\Auth\UserController::class, 'demarcheurList'])->name('admin/demarcheurs');
+    Route::get('admin/demarcheurs', [UserController::class, 'demarcheurList'])->name('admin/demarcheurs');
 
     // ------------------------------Clients ---------------------------------------
-    Route::get('admin/clients', [App\Http\Controllers\Admin\Auth\UserController::class, 'clientList'])->name('admin/clients');
+    Route::get('admin/clients', [UserController::class, 'clientList'])->name('admin/clients');
 
     // ------------------------------Importateurs ---------------------------------------
-    Route::get('admin/importer', [App\Http\Controllers\Admin\Importateurs\ImportateurController::class, 'create'])->name('admin/importer');
-    Route::get('admin/importers', [App\Http\Controllers\Admin\Importateurs\ImportateurController::class, 'index'])->name('admin/importers');
-    Route::post('admin/importer', [App\Http\Controllers\Admin\Importateurs\ImportateurController::class, 'store'])->name('admin/importer');
+    Route::get('admin/importer', [ImportateurController::class, 'create'])->name('admin/importer');
+    Route::get('admin/importers', [ImportateurController::class, 'index'])->name('admin/importers');
+    Route::post('admin/importer', [ImportateurController::class, 'store'])->name('admin/importer');
 
+
+    // Route::get('/user/confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm');
+    // Route::post('/user/confirm-password', [ConfirmablePasswordController::class, 'confirm']);
     // ------------------------------Dashboard ---------------------------------------
     Route::get('/', [HomeController::class, 'index'])->name('admin');
    

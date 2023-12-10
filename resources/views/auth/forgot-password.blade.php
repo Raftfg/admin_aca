@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Auto Connect Africa</title>
+    <title>Africa Auto Connect </title>
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -18,23 +18,23 @@
             <div class="card login-card">
                 <div class="row no-gutters">
                     <div class="col-md-6">
-                        <img src="{{ asset('assets/images/log1.jpg') }}" alt="login" class="login-card-img">
-                        <p class="login-card-invitation">Réinitialisez votre mot de passe sur Auto Connect Africa!</p>
+                        <img src="{{ asset('assets/images/refonte.png') }}" alt="login" class="login-card-img">
+                        <p class="login-card-invitation">Réinitialisez votre mot de passe sur Africa Auto Connect!</p>
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <div class="brand-wrapper">
-                                <img src="{{ asset('assets/images/log1.jpg') }}" alt="aca" class="logo">
+                                <img src="{{ asset('assets/images/refonte.png') }}" alt="aca" class="logo">
                                 <span class="brand-message" style="
                 color: red;
                 font-weight: bold;
-                margin-left: 9px;"><span style="color:black;">AUTO</span> CONNECT AFRICA</span>
+                margin-left: 9px;"><span style="color:black;">AFRICA</span> AUTO CONNECT </span>
                             </div>
                             <marquee behavior="scroll" direction="right" width="100%">
                                 <p class="" style="
                 color: black;
                 font-weight: bold;
-                margin-left: 9px; text-transform: uppercase;">Réinitialisez votre mot de passe sur Auto Connect Africa</p>
+                margin-left: 9px; text-transform: uppercase;">Réinitialisez votre mot de passe sur Africa Auto Connect </p>
                             </marquee>
 
                             <form method="POST" action="{{ route('password.request') }}">

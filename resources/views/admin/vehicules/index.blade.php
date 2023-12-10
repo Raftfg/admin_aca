@@ -26,12 +26,12 @@
 
 
                                     <th>Importateur</th>
-                                    <th>Type véhicule</th>
+                                    {{-- <th>Type véhicule</th> --}}
                                     <th>Model</th>
                                     <th>Année</th>
                                     <th>Marque</th>
                                     <th>prix</th>
-                                    <th>Désignation</th>
+                                    {{-- <th>Désignation</th> --}}
                                     <th>Couleur</th>
                                     <th class="text-center">Action</th>
 
@@ -44,15 +44,15 @@
                                         {{ \App\Models\Importer::where(['id' => $item->importer_id])->first()->company_name }}
                                     </td>
                                     <td class="id">
-                                        {{ \App\Models\VehicleType::where(['id' => $item->vehicle_type_id])->first()->type }}
+                                        {{ \App\Models\Modeel::where(['id' => $item->model_id])->first()->name }}
                                     </td>
-                                    <td>{{ $item->model }}</td>
+                                    {{-- <td>{{ $item->model }}</td> --}}
                                     <td>{{ $item->manufacturing_year }}</td>
                                     <td class="id">
                                         {{ \App\Models\Brand::where(['id' => $item->brand_id])->first()->name }}
                                     </td>
                                     <td>{{ $item->price }}</td>
-                                    <td>{{ $item->name }}</td>
+                                    {{-- <td>{{ $item->name }}</td> --}}
                                     <td>{{ $item->color }}</td>
 
 

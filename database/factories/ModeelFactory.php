@@ -4,17 +4,17 @@
 
 namespace Database\Factories;
 
-use App\Models\VehicleType;
+use App\Models\Modeel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class VehicleTypeFactory extends Factory
+class ModeelFactory extends Factory
 {
-    protected $model = VehicleType::class;
+    protected $model = Modeel::class;
 
     public function definition()
     {
         return [
-            'type' => $this->faker->word,
+            'name' => $this->faker->word,
             // Ajoutez d'autres colonnes si nécessaire
         ];
     }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Africa Auto Connect </title>
+  <title> Africa Auto Connect</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
         <div class="row no-gutters">
           <div class="col-md-6">
             <img src="{{ asset('assets/images/refonte.png') }}" alt="login" class="login-card-img">
-            <p class="login-card-invitation">Rejoignez Auto Connect Africa!</p>
+            <p class="login-card-invitation">Rejoignez  Africa Auto Connect!</p>
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -25,18 +25,34 @@
                 <span class="brand-message" style="
                 color: red;
                 font-weight: bold;
-                margin-left: 9px;"><span style="color:black;">AFRICA  </span> AUTO CONNECT </span>
+                margin-left: 9px;"><span style="color:black;">AFRICA </span> AUTO CONNECT </span>
               </div>
               <marquee behavior="scroll" direction="right" width="100%">
                 <p class="" style="
                 color: black;
                 font-weight: bold;
-                margin-left: 9px; text-transform: uppercase;">Vérifier mon adresse mail</p>
+                margin-left: 9px; text-transform: uppercase;">Entrer votre code d'authentification pour se connecter</p>
               </marquee>
-              <form method="POST" action="{{ route('verification.send') }}">
+              <form method="POST" action="{{ url('two-factor-challenge') }}">
                 @csrf
-                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Renvoyer le mail">
+                <div class="form-group mb-4">
+                  <input name="code"  type="text" class="form-control">
+                  <input name="submit" id="submit" class="btn btn-block login-btn mb-4" type="submit" value="Envoyer">
+                </div>
               </form>
+              <p>Enter your recovery code </p>
+              <form method="POST" action="{{ url('two-factor-challenge') }}">
+                @csrf
+                <div class="form-group mb-4">
+                  <input name="recovery_code"  type="text" class="form-control">
+                  <input name="submit" id="submit" class="btn btn-block login-btn mb-4" type="submit" value="Envoyer">
+                </div>
+              </form>
+              @if(session('status'))
+              <div class="alert alert-success mt-3">
+                  {{ session('status') }}
+              </div>
+              @endif
               <a href="{{ route('password.request') }}" class="forgot-password-link">Mot de passe oublié?</a>
               <nav class="login-card-footer-nav">
                 <a href="#!">Conditions d'utilisation.</a>

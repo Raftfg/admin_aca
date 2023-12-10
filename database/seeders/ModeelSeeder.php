@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\VehicleType;
+use App\Models\Modeel;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class VehicleTypeSeeder extends Seeder
+class ModeelSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,10 @@ class VehicleTypeSeeder extends Seeder
     public function run(): void
     {
         //
-        VehicleType::factory(3)->create();
+        Modeel::factory(3)->create();
 
-        VehicleType::create([
-            'type' => 'Sedan',
+        Modeel::create([
+            'name' => 'Sedan',
         ]);
     }
 }

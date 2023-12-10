@@ -7,7 +7,7 @@
             <span class="app-brand-logo demo">
                 <img src="{{URL::to('assets/front/img/logo11.png')}}" alt="Brand Logo" class="img-fluid">
             </span>
-            <a href="{{ route('home') }}" class="app-brand-text demo sidenav-text font-weight-normal ml-2">{{ Auth::user()->name }}</a>
+            {{-- <a href="{{ route('home') }}" class="app-brand-text demo sidenav-text font-weight-normal ml-2">{{ Auth::user()->name }}</a> --}}
             <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
                 <i class="ion ion-md-menu align-middle"></i>
             </a>
@@ -16,7 +16,6 @@
 
         <!-- Links -->
         <ul class="sidenav-inner py-1">
-
             <!-- Dashboards -->
             <li class="sidenav-item">
                 <a href="{{ route('admin/home') }}" class="sidenav-link">

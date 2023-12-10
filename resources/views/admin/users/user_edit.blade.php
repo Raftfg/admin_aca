@@ -56,7 +56,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label">Nom</label>
+                                    <label class="form-label">Nom  <span style="color: red">*</span></label>
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                         name="name" value="{{ $data->name }}" autocomplete="name" autofocus
                                         placeholder="Username">
@@ -68,7 +68,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Prénom</label>
+                                    <label class="form-label">Prénom  <span style="color: red">*</span></label>
                                     <input id="prename" type="text"
                                         class="form-control @error('prename') is-invalid @enderror" name="prename"
                                         value="{{ $data->prename }}" autocomplete="prename" autofocus
@@ -81,7 +81,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Email</label>
+                                    <label class="form-label">Email  <span style="color: red">*</span></label>
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ $data->email }}" autocomplete="email"
                                         placeholder="Entrer votre email">
@@ -109,7 +109,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Password</label>
+                                    <label class="form-label">Password  <span style="color: red">*</span></label>
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         autocomplete="new-password" placeholder="Enter password">
@@ -121,7 +121,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Password Confirmation</label>
+                                    <label class="form-label">Password Confirmation <span style="color: red">*</span></label>
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" autocomplete="new-password"
                                         placeholder="Password confirmation">

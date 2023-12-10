@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\TypesVehicule;
+namespace App\Http\Controllers\Admin\Modeel;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\VehicleType;
+use App\Models\Modeel;
 // use Hash;
 use Illuminate\Support\Facades\Hash ;
 
-class TypesVehiculeController extends Controller
+class ModeelController extends Controller
 {
     public function __construct()
     {
@@ -20,14 +20,14 @@ class TypesVehiculeController extends Controller
     public function create()
     {
        
-        return view('admin.typesVehicule.create');
+        return view('admin.Modeel.create');
     }
 
     public function index(Request $request)
     {
-        $typesVehicule = VehicleType::latest()->get();
+        $Modeel = Modeel::latest()->get();
         // dd( $users );
-        return view('admin.typesVehicule.index',compact('typesVehicule'));
+        return view('admin.Modeel.index',compact('Modeel'));
     }
 
 

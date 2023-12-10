@@ -16,7 +16,7 @@
         <div class="row no-gutters">
           <div class="col-md-6">
             <img src="{{ asset('assets/images/refonte.png') }}" alt="login" class="login-card-img">
-            <p class="login-card-invitation">Rejoignez Auto Connect Africa!</p>
+            <p class="login-card-invitation">Rejoignez Africa Auto Connect!</p>
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -25,17 +25,24 @@
                 <span class="brand-message" style="
                 color: red;
                 font-weight: bold;
-                margin-left: 9px;"><span style="color:black;">AFRICA  </span> AUTO CONNECT </span>
+                margin-left: 9px;"><span style="color:black;">AFRICA </span> AUTO CONNECT </span>
               </div>
               <marquee behavior="scroll" direction="right" width="100%">
                 <p class="" style="
                 color: black;
                 font-weight: bold;
-                margin-left: 9px; text-transform: uppercase;">Vérifier mon adresse mail</p>
+                margin-left: 9px; text-transform: uppercase;">Confirmer votre mot de passe</p>
               </marquee>
-              <form method="POST" action="{{ route('verification.send') }}">
+              <form method="POST" action="{{ url('user/confirm-password') }}">
                 @csrf
-                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Renvoyer le mail">
+                <div class="form-group mb-4">
+                  <label for="password" class="sr-only">Password</label>
+                  <input type="password" name="password" id="password" class="form-control" placeholder="***********">
+                  @error('password')
+                  <span class="text-danger ">{{ $message }}</span>
+                  @enderror
+                </div>
+                <input name="confirm" id="confirm" class="btn btn-block login-btn mb-4" type="submit" value="Se connecter">
               </form>
               <a href="{{ route('password.request') }}" class="forgot-password-link">Mot de passe oublié?</a>
               <nav class="login-card-footer-nav">

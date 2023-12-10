@@ -2,10 +2,10 @@
     <!-- Brand demo (see assets/css/demo/demo.css) -->
     <div class="app-brand demo ">
         <span class=" demo ">
-            <img width="60" src="{{ asset('assets/images/logos.png') }}" alt="Brand Logo" class="img-fluid">
+            <img width="60" src="{{ asset('assets/images/refonte.png') }}" alt="Brand Logo" class="img-fluid">
 
         </span>
-        <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2">ACA</a>
+        <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2">AAC</a>
         <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
             <i class="ion ion-md-menu align-middle"></i>
         </a>
@@ -126,12 +126,12 @@
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon  ion ion-md-barcode align-middle"></i>
-                <div>Types de véhicule</div>
+                <div>Models</div>
             </a>
             <ul class="sidenav-menu">
                 <li>
                     <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{route('admin/type-vehicule')}}" class="sidenav-link ">
+                    <a href="{{route('admin/modeel')}}" class="sidenav-link ">
 
                         <i class="sidenav-icon ion ion-md-barcode align-middle"></i>
 
@@ -140,7 +140,7 @@
                 </li>
                 <li>
                     <!-- route n'existe pas sans le name du web.php-->
-                    <a href="{{route('admin/types-vehicule')}}" class="sidenav-link  ">
+                    <a href="{{route('admin/modeels')}}" class="sidenav-link  ">
                         <i class="sidenav-icon feather icon-list"></i>
                         <div>Liste</div>
                     </a>
@@ -157,12 +157,12 @@
         </li> --}}
 
         
-        <li class="sidenav-item ">
+        {{-- <li class="sidenav-item ">
             <a href="{{route('admin/clients')}}" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-people"></i>
                 <div>Clients</div>
             </a>
-        </li>
+        </li> --}}
 
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">

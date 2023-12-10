@@ -1,8 +1,5 @@
 @extends('admin/layouts.master')
-
 @section('content')
-
-
 <!-- [ Layout content ] Start -->
 <div class="layout-content">
   <!-- [ content ] Start -->
@@ -52,26 +49,11 @@
                   </div>
 
                   <div class="form-group col-md-4">
-                    <label class="col-form-label">Type véhicule</label>
-                    <select class="form-control" name="type_vehicule" id="type_vehicule" required>
+                    <label class="col-form-label">Marques</label>
+                    <select class="form-control" name="marque_vehicule" id="type_vehicule" required>
                       <option value="">Sélectionner</option>
                       <option value="Peugeot">Peugeot</option>
                     </select>
-                  </div>
-
-                  <div class="form-group col-md-4">
-                    <label class="col-form-label">Désignation véhicule</label>
-                    <input type="text" class="form-control" id="v" name="designation" placeholder="Entrer un nom de véhicule" required>
-                  </div>
-                </div>
-
-
-                <div class="row">
-
-
-                  <div class="form-group  col-md-4">
-                    <label class="col-form-label">Vin / N° Châssis </label>
-                    <input type="text" class="form-control" id="annee" name="annee" placeholder="Entrer Vin" required>
                   </div>
 
                   <div class="form-group col-md-4">
@@ -81,8 +63,20 @@
                       <option value="Peugeot">Peugeot</option>
                     </select>
                   </div>
+                </div>
 
-                  <div class="form-group col-md-4">
+
+                <div class="row">
+
+
+                  <div class="form-group  col-md-6">
+                    <label class="col-form-label">Vin / N° Châssis </label>
+                    <input type="text" class="form-control" id="annee" name="annee" placeholder="Entrer Vin" required>
+                  </div>
+
+                  
+
+                  <div class="form-group col-md-6">
                     <label class="col-form-label">Document</label>
                     <div class="custom-file">
                       <input type="file" class="custom-file-input" id="customDocument" name="customDocument" accept="document/*" required>
@@ -97,21 +91,21 @@
 
                 <div class="row">
 
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <label class="col-form-label">Couleur</label>
                     <input type="text" class="form-control" id="color" name="color" placeholder="Entrer une couleur" required>
                   </div>
 
-                  <div class="form-group col-md-4">
+                  {{-- <div class="form-group col-md-4">
                     <label class="col-form-label">Marque</label>
                     <select class="form-control" name="marque" id="marque" required>
                       <option value="">Sélectionner</option>
                       <option value="1">Range Over</option>
                     </select>
-                  </div>
+                  </div> --}}
 
 
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <label class="col-form-label">Image de couverture</label>
                     <div class="custom-file">
                       <input type="file" class="custom-file-input" id="customFile" name="customFile" accept="document/*" required>

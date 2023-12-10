@@ -12,7 +12,7 @@ use Database\Seeders\CommentSeeder;
 use Database\Seeders\CountrySeeder;
 use Database\Seeders\VehicleSeeder;
 use Database\Seeders\ImporterSeeder;
-use Database\Seeders\VehicleTypeSeeder;
+use Database\Seeders\ModeelSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(ImporterSeeder::class);
         $this->call(LogSeeder::class);
-        $this->call(VehicleTypeSeeder::class);
+        $this->call(ModeelSeeder::class);
         $this->call(VehicleSeeder::class);
         $this->call(CommentSeeder::class);
         $this->call(ImageSeeder::class);

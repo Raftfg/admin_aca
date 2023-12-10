@@ -29,6 +29,8 @@ class ImporterSeeder extends Seeder
             'status' => 'Actif',
             'whatsapp_number' => '123456789',
             'facebook_url' => 'https://www.facebook.com/importeurXYZ',
+            'rccm_number' => 'RCCM123', // Remplacez par la valeur souhaitée
+            'website_url' => 'https://www.importeurXYZ.com',
             'user_id' => 1,
         ]);
     }

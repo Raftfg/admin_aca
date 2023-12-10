@@ -4,9 +4,10 @@
 
 namespace Database\Factories;
 
+use Str;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
 {
@@ -22,7 +23,7 @@ class UserFactory extends Factory
             'password' => Hash::make('password'), // Assurez-vous d'utiliser un mot de passe sécurisé
             'address' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,
-            'remember_token' => \Str::random(10),
+            'remember_token' => Str::random(10),
         ];
     }
 }

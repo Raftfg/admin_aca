@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('whatsapp_number')->nullable();
             $table->string('facebook_url')->nullable();
+            $table->string('rccm_number')->nullable(); // Ajout du champ RCCM
+            $table->string('website_url')->nullable(); // Ajout du champ URL du site web
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

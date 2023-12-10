@@ -44,31 +44,46 @@
                   <td class="id"> {{ \App\Models\Dimension::where(['id'=>$item->dimenesion_id ])->first()->libelle}}</td>
                   <td class="id"> {{ \App\Models\Sexe::where(['id'=>$item->sexe_id ])->first()->libelle}}</td> --}}
 
-                  <td class="text-center">
-                    <a href="{{ url('admin/user/update/' . $item->id) }}" class="m-r-15 text-muted VehiculeUpdate">
-                      <i class="fa fa-eye" style="color: #2196f3;"></i>
-                    </a>
-                    <a href="{{ url('admin/user/update/' . $item->id) }}" class="m-r-15 text-muted VehiculeUpdate">
-                      <i class="fa fa-edit" style="color: #2196f3;"></i>
-                    </a>
-                    <a href="{{ url('admin/user/delete/' . $item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><i class="fa fa-trash" style="color: red;"></i></a>
-                  </td>
-
-
-                  </td>
+                  {{-- <td class="text-center">
+                  <a href="{{ url('admin/user/update/' . $item->id) }}" class="m-r-15 text-muted VehiculeUpdate">
+                      <i class="fas fa-edit" style="color: #2196f3;"></i>
+                  </a>
+                  <a href="{{ url('admin/user/delete/' . $item->id) }}" onclick="return confirm('Are you sure you want to delete it?')">
+                      <i class="fas fa-trash" style="color: red;"></i>
+                  </a>
+                  </td> --}}
+                  <td class="text-right" width="5px">
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            &nbsp;
+                            <i class="fas fa-tasks" aria-hidden="true"></i> &nbsp;
+                        </button>
+                        <div class="dropdown-menu action-button-div" aria-labelledby="btnGroupDrop1"
+                             >
+                            <a href="{{ url('admin/user/update/' . $item->id) }}" class="dropdown-item font-weight-bold" style="color: black;">
+                                <i class="fas fa-edit" aria-hidden="true"></i>
+                                Modifier
+                            </a>
+                            <hr class="m-1"/>
+                            <a href="{{ url('admin/user/delete/' . $item->id) }}" class="dropdown-item text-danger font-weight-bold"
+                              >
+                                <i class="fas fa-trash-alt"></i>
+                                Supprimer
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                
+               
                 </tr>
                 @endforeach
               </tbody>
             </table>
-
-
           </div>
         </div>
       </div>
-
-
     </div>
-
     <!-- [ content ] End -->
   </div>
 

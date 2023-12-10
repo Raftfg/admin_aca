@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Vehicle;
 use App\Models\Importer;
 use App\Models\Brand;
-use App\Models\VehicleType;
+use App\Models\Modeel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +25,7 @@ class HomeController extends Controller
         $totalImpoter  = Importer::all()->count();
         $totalVehicle = Vehicle::all()->count();
         $totalBrand  = Brand::all()->count();
-        $totalVehicleType = VehicleType::orderBy('id', 'Desc')->get();
+        $totalVehicleType = Modeel::orderBy('id', 'Desc')->get();
         $years = $totalVehicleType;
         $users_year = $totalVehicleType;
 

@@ -18,32 +18,65 @@
 
             <div class="form-group row">
               <div class="col-sm-12">
-                @if (\Session::has('insert'))
-                <div id="hide-message" class="alert alert-success alert-dismissible fade show">
-                  <i class="feather icon-check-circle" style="font-size:1em"></i>
-                  {!! \Session::get('insert') !!}
-                </div>
+                {{-- @if (\Session::has('insert'))
+                    <div id="hide-message" class="alert alert-success alert-dismissible fade show">
+                        <i class="feather icon-check-circle" style="font-size:1em"></i>
+                        {!! \Session::get('insert') !!}
+                    </div>
                 @endif
-
+            
                 @if (\Session::has('error'))
-                <div id="hide-message" class="alert alert-danger alert-dismissible fade show">
-                  <i class="feather icon-check-circle" style="font-size:1em"></i>
-                  {!! \Session::get('error') !!}
-                </div>
+                    <div id="hide-message" class="alert alert-danger alert-dismissible fade show">
+                        <i class="feather icon-alert-circle" style="font-size:1em"></i>
+                        {!! \Session::get('error') !!}
+                    </div>
                 @endif
-                <div class="clearfix"></div>
-              </div>
+            
+                <div class="clearfix"></div> --}}
+                @if (session('status') == 'success')
+                <div id="hide-message" class="alert alert-success alert-dismissible fade show">
+                    <i class="feather icon-check-circle" style="font-size:1em"></i>
+                    {{ session('message') }}
+                </div>
+            @endif
+        
+            @if (session('status') == 'error')
+                <div id="hide-message" class="alert alert-danger alert-dismissible fade show">
+                    <i class="feather icon-alert-circle" style="font-size:1em"></i>
+                    {{ session('message') }}
+                </div>
+            @endif
+        
+            <div class="clearfix"></div>
+            </div>
+            
             </div>
             <form id="validation" action="{{ route('admin/register') }}" method="POST">
               {{ csrf_field() }}
 
               <div class="col-md-12">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+    
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    <i class="feather icon-check-circle" style="font-size:1em"></i>
+                    {{ session('success') }}
+                </div>
+            @endif
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <label class="col-form-label ">Nom</label>
+                    <label class="col-form-label ">Nom  <span style="color: red">*</span></label>
                     <div class="">
-                      <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('firstname') }}" autocomplete="name" autofocus placeholder="Nom">
-                      @error('name')
+                      <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" autocomplete="lastname" autofocus placeholder="Nom">
+                      @error('lastname')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
@@ -52,10 +85,10 @@
                     </div>
                   </div>
                   <div class="form-group col-md-6">
-                    <label class="col-form-label ">Prénom</label>
+                    <label class="col-form-label ">Prénom  <span style="color: red">*</span></label>
                     <div class="">
-                      <input id="prename" type="text" class="form-control @error('prename') is-invalid @enderror" name="prename" value="{{ old('firstname') }}" autocomplete="prename" autofocus placeholder="Prénom">
-                      @error('prename')
+                      <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" autocomplete="firstname" autofocus placeholder="Prénom">
+                      @error('firstname')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
@@ -65,12 +98,10 @@
                   </div>
                 </div>
               </div>
-
-
               <div class="col-md-12">
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <label class="col-form-label ">Email</label>
+                    <label class="col-form-label ">Email  <span style="color: red">*</span></label>
                     <div class="">
                       <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Entrer votre email">
                       @error('email')
@@ -85,12 +116,13 @@
                   <div class="form-group col-md-6">
                     <label class="col-form-label ">Téléphone</label>
                     <div class="">
-                      <input id="tel" type="tel" class="form-control @error('tel') is-invalid @enderror" name="tel" value="{{ old('tel') }}" autocomplete="tel" placeholder="Votre nuémro de téléphone">
-                      @error('tel')
+                      <input id="phone" type="text" class="form-control" name="phone" autocomplete="phone" placeholder="Votre nuémro de téléphone">
+                      {{-- <input id="tel" type="tel" class="form-control @error('tel') is-invalid @enderror" name="tel" value="{{ old('tel') }}" autocomplete="tel" placeholder="Votre nuémro de téléphone"> --}}
+                      {{-- @error('tel')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                      @enderror
+                      @enderror --}}
                       <div class="clearfix"></div>
                     </div>
                   </div>
@@ -102,26 +134,22 @@
                   <div class="form-group col-md-12">
                     <label class="col-form-label ">Adresse</label>
                     <div class="">
-                      <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" autocomplete="address" placeholder="Entrer votre adresse complète">
-                      @error('address')
+                      <input id="address" type="text" class="form-control"  name="address"  autocomplete="address" placeholder="Votre adresse">
+                      {{-- <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" autocomplete="address" placeholder="Votre nuémro de téléphone"> --}}
+                      {{-- @error('address')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>
-                      @enderror
+                      @enderror --}}
                       <div class="clearfix"></div>
                     </div>
                   </div>
-
-
                 </div>
               </div>
-
-
-
               <div class="col-md-12">
                 <div class="row">
                   <div class="form-group col-md-6">
-                    <label class="col-form-label ">Password</label>
+                    <label class="col-form-label ">Password  <span style="color: red">*</span></label>
                     <div class="">
                       <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password" placeholder="Enter password">
                       @error('password')
@@ -134,7 +162,7 @@
                   </div>
 
                   <div class="form-group col-md-6">
-                    <label class="col-form-label ">Password Confirmation</label>
+                    <label class="col-form-label ">Password Confirmation  <span style="color: red">*</span></label>
                     <div class="">
                       <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password" placeholder="Password confirmation">
                       <div class="clearfix"></div>
@@ -142,28 +170,28 @@
                   </div>
                 </div>
               </div>
-
-
+              <div class="col-sm-12">
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show">
+                        <i class="feather icon-check-circle" style="font-size:1em"></i>
+                        {{ session('success') }}
+                    </div>
+                @endif
+            
+                <!-- Votre autre contenu ici -->
+            </div>
               <div class="form-group col-md-12 mt-2 d-flex justify-content-between">
-
                 <button type="reset" class="btn btn-danger">Annuler</button>
                 <button type="submit" class="btn btn-primary ml-2" style="background-color: rgb(26,47,68) !important;">Enregistrer</button>
-
               </div>
             </form>
           </div>
         </div>
       </div>
-
-
-
     </div>
-
     <!-- [ content ] End -->
   </div>
-
   <!-- [ Layout footer ] Start -->
-
   <style>
     .form-group select,
     .form-group input,
@@ -173,11 +201,8 @@
     }
   </style>
 </div>
-
 <!-- [ Layout content ] Start -->
 @endsection
-
-
 @section('script')
 <!-- library js validate -->
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

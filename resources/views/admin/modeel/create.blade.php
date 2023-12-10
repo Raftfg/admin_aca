@@ -13,7 +13,7 @@
         <div class="card ">
 
           <h4 class="card-header text-white rounded p-3 text-center" style="background-color: rgb(26,47,68); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)">
-            Ajouter un type de vehicule
+            Ajouter une model de vehicule
           </h4>
 
           <div class="card-body">
@@ -41,8 +41,8 @@
 
 
               <div class="form-group">
-                <label class="col-form-label">Type de véhicule</label>
-                <input type="text" class="form-control" id="type" name="type" placeholder="Entrer un type de véhicule" required>
+                <label class="col-form-label">Model</label>
+                <input type="text" class="form-control" id="marque" name="marque" placeholder="Entrer une model de véhicule" required>
               </div>
 
 

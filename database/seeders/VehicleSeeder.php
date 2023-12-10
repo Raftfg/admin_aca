@@ -18,11 +18,12 @@ class VehicleSeeder extends Seeder
 
         Vehicle::create([
             'importer_id' => 1,
-            'vehicle_type_id' => 1,
-            'model' => 'Toyota Camry',
+            'model_id' => 1,
+            'countrie_id' => 1,
+            // 'model' => 'Toyota Camry',
             'manufacturing_year' => 2022,
             'chassis_number' => '1HGCM82633A123456',
-            'country_origin' => 'Japan',
+            // 'country_origin' => 'Japan',
             'document_cert' => 'XYZ123 Certificate',
             'price' => 25000.00,
             'condition' => 'New',
