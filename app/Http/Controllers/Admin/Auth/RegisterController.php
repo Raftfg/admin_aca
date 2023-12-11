@@ -43,6 +43,10 @@ class RegisterController extends Controller
             'address' => $request->address,
             'password' => Hash::make($request->password),
         ]);
+
+        // Assigner automatiquement le rôle "admin" à l'utilisateur
+       $adminRole = Role::where('name', 'admin')->first();
+       $user->assignRole($adminRole);
         // Display success toast
         session()->flash('success', 'Utilisateur enregistré avec succès!');
 

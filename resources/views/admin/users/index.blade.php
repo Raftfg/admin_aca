@@ -33,25 +33,15 @@
               </thead>
               <tbody>
                 @foreach ($users as $item)
+                @if(auth()->user()->hasRole('admin') && $item->hasRole('super_admin'))
+                                <!-- Skip the super_admin user for admin -->
+                            @else
                 <tr>
                   <td>{{$item->lastname}}</td>
                   <td>{{$item->firstname}}</td>
                   <td>{{$item->email}}</td>
                   <td>{{$item->phone}}</td>
                   <td>{{$item->address}}</td>
-
-                  {{-- <td class="id"> {{ \App\Models\Annee::where(['id'=>$item->annee_id ])->first()->annee}}</td>
-                  <td class="id"> {{ \App\Models\Dimension::where(['id'=>$item->dimenesion_id ])->first()->libelle}}</td>
-                  <td class="id"> {{ \App\Models\Sexe::where(['id'=>$item->sexe_id ])->first()->libelle}}</td> --}}
-
-                  {{-- <td class="text-center">
-                  <a href="{{ url('admin/user/update/' . $item->id) }}" class="m-r-15 text-muted VehiculeUpdate">
-                      <i class="fas fa-edit" style="color: #2196f3;"></i>
-                  </a>
-                  <a href="{{ url('admin/user/delete/' . $item->id) }}" onclick="return confirm('Are you sure you want to delete it?')">
-                      <i class="fas fa-trash" style="color: red;"></i>
-                  </a>
-                  </td> --}}
                   <td class="text-right" width="5px">
                     <div class="btn-group btn-group-sm" role="group">
                         <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle"
@@ -74,9 +64,8 @@
                         </div>
                     </div>
                 </td>
-                
-               
                 </tr>
+                @endif
                 @endforeach
               </tbody>
             </table>
